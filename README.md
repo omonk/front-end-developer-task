@@ -4,7 +4,9 @@ Using the assets here, style up the content to product a layout to sell the sung
 
 How you style it is up to you, but bear in mind it should fit with the Rapha brand. Show off your CSS and JS skills.
 
-**There are additional inline comments within `index.html`.**
+We’d like you to use JS to create something similar [this fancy hover of the face thing](http://hankjobenhavn.com/#/eyewear/state) to show the sunglasses at different angles.
+
+**NB:** There are additional inline comments within `index.html`.
 
 All the copy is in `index.html`
 
