@@ -2,7 +2,7 @@
 
 Using the assets here, style up the content to produce a layout to sell the sunglasses.
 
-How you style it is up to you, but bear in mind it should fit with the Rapha brand. Show off your CSS and JS skills.
+The style and functionality is up to you, but bear in mind it should fit with the Rapha brand. Show off your CSS and JS skills.
 
 We’d like you to use JS to create something similar [this fancy hover of the face thing](http://hankjobenhavn.com/#/eyewear/state) to show the sunglasses at different angles.
 
@@ -12,7 +12,7 @@ We’d like you to use JS to create something similar [this fancy hover of the f
 
 All the copy is in `index.html`
 
-There are a bunch of images to use within `img/`
+There are a bunch of images to use within `img/` — location photography, packaging, details and colour ways.
 
 You can use grunt to compile your `.scss` or just edit the `.css` file
 
