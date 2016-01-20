@@ -8,6 +8,9 @@ We’d like you to use JS to create something similar _[this fancy hover over th
 
 **NB:** There are additional inline comments within `index.html`.
 
+## Submitting your finished page
+You can zip it up and email it to us or fork this and host it on your own GitHub account. We’ll take a look before your interview, but we’ll talk about it with you when you come to meet us too.
+
 ## Assets
 
 All the copy is in `index.html`
