@@ -6,6 +6,8 @@ The style and functionality is up to you, but bear in mind it should fit with th
 
 We’d like you to use JS to create something similar _[this fancy hover over the face thing](http://hankjobenhavn.com/#/eyewear/state)_ to show the sunglasses at different angles.
 
+We wouldn’t expect you spend any more than a couple of evenings on this.
+
 **NB:** There are additional inline comments within `index.html`.
 
 ## Submitting your finished page
