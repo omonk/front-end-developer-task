@@ -1,4 +1,4 @@
-# Rapha Front end developer task
+# Rapha Front End Developer Task
 
 Using the assets here, style up the content to produce a layout to sell the sunglasses.
 
