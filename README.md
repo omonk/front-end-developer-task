@@ -8,6 +8,8 @@ We’d like you to use JS to create something similar [this fancy hover of the f
 
 **NB:** There are additional inline comments within `index.html`.
 
+## Assets
+
 All the copy is in `index.html`
 
 There are a bunch of images to use within `img/`
