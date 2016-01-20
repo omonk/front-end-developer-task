@@ -21,3 +21,7 @@ You can use grunt to compile your `.scss` or just edit the `.css` file
 To use Grunt you must have [Node.js](https://nodejs.org/en/) installed as well as the [Grunt CLI](http://gruntjs.com/getting-started)
 
 If you have them already just run `npm install` to get the project setup and then run grunt to get going.
+
+## Preview
+
+![base layout](screenshot.png)
