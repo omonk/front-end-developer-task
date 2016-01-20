@@ -1,0 +1,9 @@
+// grid container, that gives us gutters
+.container { margin: 0 $column/4; @include clearfix;
+  @include breakpoint($tablet-landscape) {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+} 
+// gives elements gutters using padding
+.wrapper { padding: 0 #{($line/2)/$em}em; box-sizing: border-box; float: left; } 

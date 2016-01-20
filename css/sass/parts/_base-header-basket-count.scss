@@ -1,0 +1,16 @@
+// Basket as numbers
+.basket_switch { @include Trade-Gothic; text-transform: uppercase; position: relative; letter-spacing: .0625em; -webkit-font-smoothing: antialiased; float: right;
+  span:before { font-size: 1.375em; position: relative; top: .09375em; }
+  &:link, &:visited { color: $darkgrey; }
+  &:hover, &.active:hover { color: $lightgrey; }
+  &.active { color: $pink; }
+}
+.locale_switch_fr:before { background-position: -2.125rem -.6875rem; }
+
+.locale_switch { position: relative; float: left; margin: 0; font-size: .625em; @include sans;
+  &:link, &:visited { color: $grey; }
+  img { width: 2.75em; height: 1.925em; margin-right: .375em; border: 1px solid $pitchblack; }
+}
+.local_switch_words { position: relative; top: -.625em; }
+
+@include breakpoint-max($tablet) { .expanded+.toggle-menus { width: 100%; } }

@@ -1,0 +1,71 @@
+// NAVIGATION
+.rapha-wrap { position: relative; left: 0; @include transition(left .2s linear); background-color: $black; z-index: 100;
+  &.active { left: 80%;
+    @include breakpoint($tablet) { left: 40%; }
+    header[role="banner"].container { margin: 0; }
+  }
+}
+.mobile-menu-title { background-color: $pitchblack; color: $darkgrey; margin: 0 0 1rem; text-align: center; letter-spacing: .125em; font-size: .8125em; -webkit-font-smoothing: antialiased; padding: .125rem 0 .25rem;
+  @include breakpoint($tablet-mid) { display: none; }
+}
+nav[role="navigation"] { position: relative; float: left; width: 100%; padding: 0; margin-top: .375em;
+  @include breakpoint-max($tablet-mid) { display: none; }
+  &.mobile-nav { position: absolute; left: -80%; top: -1.875rem; width: 80%; z-index: 0; height: 100%; margin-top: 0;
+    @include breakpoint($tablet) { left: -40%; width: 40%; }
+    .search-box { margin: 0 0 1em; }
+  }
+  @include breakpoint($tablet-mid) { display: block; margin-bottom: .25em;
+    .search-box { display: none; } // NEED TO TAKE THIS OUT
+  }
+  .primary-nav { margin: 0; padding: 0; float: left; width: 100%;
+    @include breakpoint($tablet-mid) { @include display(flex); @include justify-content(center); @include flex-wrap(wrap); }
+    a { -webkit-font-smoothing: antialiased; padding: .375em .75em; font-weight: bold; display: block; width: 100%; box-sizing: border-box;
+      @include breakpoint($tablet-mid) { padding-bottom: 0; }
+      &:link, &:visited { color: $grey; }
+      &:hover, &.selected { color: $white;}
+    }
+    .subnavs { padding: 0 0 1.25em; margin: 0; display: none;
+      .partition_header { display: none; }
+      header h2 { color: $darkgrey; -webkit-font-smoothing: antialiased; font-size: .725em; letter-spacing: .125em; @include serif; margin-bottom: 0; }
+      .subnav + .subnav { margin-top: .75em; }
+      @include breakpoint($tablet-mid){ width: 100%; position: absolute; top: 1.875em; left:0; right: 0; z-index: 99999; padding-left: .75em; padding-right: .75em; border-bottom: none; background-color: $pitchblack; box-sizing: border-box; }
+    }
+    @include breakpoint($tablet-mid) { 
+      li:hover .subnavs { display: block; }
+    }
+    @include breakpoint-max($tablet-mid) {
+      li { float: left; width: 100%;  }
+      &> li { border-bottom: .0625rem solid $darkgrey; position: relative;
+        &:first-child { border-top: .0625rem solid $darkgrey; }
+        .menu-item-dropdown:after { color: $darkgrey; content: "\e009"; @include Entypo; font-size: 1.25em; line-height: 1; position: absolute; top: .625em; right: .625em; }
+        .menu-item-dropdown.active:after { content: "\e00a"; }
+      }
+    }
+    &>li>a { text-transform: uppercase; @include Trade-Gothic; font-size: .8125em; letter-spacing: .0625rem; font-weight: normal;
+      @include breakpoint($tablet-mid) {
+        &:link, &:visited { border-bottom: .125em solid $black; }
+        &:hover, &.selected { background-color: $black; border-bottom-color: $pink; }
+        &.menu-item-team-sky:hover, &.menu-item-team-sky.selected { background-color: $black; border-bottom-color: $blue; }
+      }
+    }
+  }
+  @include breakpoint($tablet-mid) {
+    .subnavs .partition_header { display: block!important; margin-top: 1.5em; }
+    .subnav {
+      header h2 { margin-top: 0; }
+      &+.subnav { margin-top: 0!important; }
+      div { @include columns(2); @include column-gap(1.5em);
+        a { padding: .3125em 0; }
+      }
+      &:first-of-type { width: 62.5%;
+        div { @include columns(3); }
+      } 
+      &:last-of-type { width: 37.5%; } 
+    }
+    .menu-item-dropdown:after { content: "\e009"; font-family: entypo,adobe-caslon-pro,serif; font-weight: 400; font-size: .875em; line-height: 1; margin-left: .25em; position: relative; top: 1px; }
+  }
+}
+@include breakpoint($tablet-mid) {
+  .menu-item-features-dropdown+.subnavs .subnav { width: 25%!important; }   .menu-item-features-dropdown+.subnavs .subnav div { -webkit-columns: 1!important; -moz-columns: 1!important; columns: 1!important; }
+}
+

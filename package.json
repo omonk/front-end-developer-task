@@ -1,0 +1,32 @@
+{
+  "name": "rapha-wordpres",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.3",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-contrib-concat": "^0.3.0",
+    "gulp": "^3.5.5",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-dev-update": "^1.1.0",
+    "grunt-sass-directory-import": "^0.1.3",
+    "grunt-sass": "^1.0.0",
+    "grunt-cache-busting": "0.0.11",
+    "node-bourbon": "^4.2.3"
+  },
+  "description": "Rapha Wordpress Theme",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapharacing/rapha-wordpress-theme.git"
+  },
+  "author": "Jon Heslop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rapharacing/rapha-wordpress-theme/issues"
+  },
+  "homepage": "https://github.com/rapharacing/rapha-wordpress-theme"
+}

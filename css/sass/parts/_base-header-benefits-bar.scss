@@ -1,0 +1,19 @@
+// Benefits Bar
+.benefits-bar { width: 100%; background-color: $pink; text-align: center; @include Trade-Gothic; text-transform: uppercase; letter-spacing: .0625rem; color: $lightgrey; font-size: .8125em; font-weight: bold; padding: .125em 0 .25em; -webkit-font-smoothing: antialiased; height: 1.875rem; overflow: hidden; position: relative; box-sizing: border-box;
+  ul { padding: 0; margin: -1px 0 0; list-style: none; display: inline-block; box-sizing: border-box;
+    li { display: none; margin: 0;
+      @include breakpoint($moblet) { margin-top: 0; }
+      &.active { display: inline-block; }
+      a:link, a:visited { color: $white; }
+      a:hover { color: $white; }
+    }
+  }
+}
+.benefits-arrow { @include Entypo; position: absolute; top: .25em;
+  &.benefits-arrow-prev { padding-right: .75em; left: .75em; color: $black;
+    @include breakpoint($tablet-mid) { left: 30%; }
+  }
+  &.benefits-arrow-next { padding-left: .75em; right: .75em; color: $black;
+    @include breakpoint($tablet-mid) { right: 30%; }
+  }
+}

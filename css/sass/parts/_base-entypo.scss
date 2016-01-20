@@ -1,0 +1,13 @@
+// Icon font stuff
+.entypo { @include Entypo; }
+
+.icon { display: inline-block; font-size: 1.5rem; line-height: 1; position: relative;
+  @include old-ie { font-size: 24px; }
+  &:link, &:visited { color: $darkgrey; }
+  &[href]:hover { color: $pink; }
+  &:active { top: 1px; }
+  &.svpply { font-size: 1.25rem; }
+  .helper-text { font-size: .625rem; @include sans; position: relative; top: -.625em; }
+}
+[data-icon]:before { @include Entypo; content: attr(data-icon); speak: none; }
+.screen-reader-text { @include visually-hidden; }

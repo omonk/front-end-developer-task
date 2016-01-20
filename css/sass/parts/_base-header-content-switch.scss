@@ -1,0 +1,7 @@
+// CONTENT SWITCH
+.menu_switch { -webkit-font-smoothing: antialiased; float: left; margin-top: .0625rem; font-size: 1.875rem;
+  &.icon:hover { color: $lightgrey; }
+  &.active { color: $white; }
+  @include breakpoint($tablet-mid) { display: none; }
+}
+.content_switch_label { text-transform: uppercase; @include Trade-Gothic; letter-spacing: .125em; font-size: .8125rem; position: relative; top: -.5em; line-height: 1; }

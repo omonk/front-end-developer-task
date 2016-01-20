@@ -1,0 +1,52 @@
+.standard_form {
+  input, select, textarea, button { font-size: .75em; padding: .375em .75em .25em; @include nicer-sans; width: 100%; @include appearance(none); background-color: $lightgrey; border: 1px solid $lightgrey; box-sizing: border-box; border-radius: .25em; line-height: 1.3;
+    &:focus { outline: none; background-color: $white; border-color: $pink; }
+  }
+  input[type="checkbox"], input[type="radio"] { margin-top: 1.5em; width: inherit; display: inline; margin-right: 0.5rem;
+    &+label { display: inline; }
+    &:focus { box-shadow: 0 0 1px 1px $pink; }
+  }
+  input[type="checkbox"] { @include appearance(checkbox); }
+  input[type="radio"] { @include appearance(radio); }
+  .submit:focus { background-color: $black; }
+  select { background-image: url(../arrow-down.svg); background-position: 95% center; background-repeat: no-repeat; background-size: 1em 1em; color: $darkgrey;
+    &:focus { color: $black; }
+    @include old-ie { background-image: url("../arrow-down.gif"); }
+  }
+  label.required:after { content: " *"; color: $pink; }
+  &.addtocart label.required:after { color: $white; }
+  // input[type="hidden"] { display: inline-block!important; line-height: 0; margin-top: 0!important; width: 0; padding: 0;}
+}
+// http://jsbin.com/aniyu4/2440 moz dropdown fix
+select { -moz-appearance: window!important; }
+@-moz-document url-prefix() {
+  .select-wrap { background-image: url(../arrow-down.svg); background-position: 95% center; background-repeat: no-repeat; background-size: 1em 1em; background-color: #FFF; background-color: $lightgrey; border: none; box-sizing: border-box; border-radius: .25em; display: block; }
+}
+
+label + .subhead, a + .subhead { margin-top: .75em; padding-top: .75em; border-top: 1px dotted $grey; }
+
+.login_form {
+  .forgotten { display: block; @include sans; margin-top: 1em; font-size: .625em; }
+}
+.form_sign_in { width: 100%;
+  @include breakpoint($tablet) { width: 50%; }
+  }
+.form_sign_up, .form_guest { width: 100%;
+  @include breakpoint($tablet) { width: 50%; }
+}
+.form_guest { float: right; }
+.reveal { margin-top: 0!important; background-color: lighten($lightgrey, 6%); padding: .75em; border-radius: .5em; border-top-right-radius: 0; border-top-left-radius: 0; display: none; }
+div.checkbox_container { margin:0;
+  &:last-of-type input { margin-top: .25em; }
+  label { display: inline-block; margin-top: .75em; }
+}
+
+
+#contactUsForm {
+  .subhead { width: 100%; }
+  .split { float: left; width: 100%; box-sizing: border-box;;
+    @include breakpoint($moblet) { width: 50%; }
+    &:first-child { padding-right: .75em; }
+    &:last-child { padding-left: .75em; }
+  }
+}

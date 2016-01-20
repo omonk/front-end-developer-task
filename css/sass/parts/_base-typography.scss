@@ -1,0 +1,48 @@
+/* Typography base unit and baseline grid = 16px / 24px */ 
+body { font-size: $font-size / 16 * 1em; line-height: #{$line / $em}em; background-color: $black; color: $black; @include serif; text-rendering: optimizeLegibility; overflow-x: hidden;
+  @include old-ie { max-width: 960px; margin: auto; }
+}
+
+a { @include transition (all .2s linear);
+  &:link, &:visited { color: $pink; text-decoration: none; }
+}
+p { margin: 0; }
+p+p { margin-top: .75em; }
+
+h1, h2 { @include Trade-Gothic; text-transform: uppercase; }
+
+.body-text { font-size: 1.125em;
+  header:first-of-type { margin-top: .25em; }
+  h2 { font-weight: normal; @include serif; font-size: 1.75em; line-height: 1.2; margin: 0 0 .75rem; text-transform: none; }
+  p, ul, cite { line-height: 1.5; }
+  h3 { margin: 1.5rem 0 0; }
+  ul { margin: .75em 0; padding: 0 0 0 2.5rem; }
+  blockquote { font-style: normal; margin: .75em 0; margin: .75em 0 .75em 2rem; padding-left: .5rem; line-height: 1.5; border-left: 2px solid $lightgrey;
+    cite { margin-top: .75em;
+      a { color: $pink; }
+    }
+  }
+  .stamp { max-width: 37.5%; height: auto; }
+  table { width: 100%; margin: .75em 0;
+    th { border-bottom: 1px solid $grey; margin-bottom: .75em; }
+    td { padding: .75em; text-align: center; border-bottom: 1px dotted $grey; }
+  }
+}
+.aside { padding: .75em!important; background-color: $lightgrey;
+  h5 { margin: 0 0 .75em; letter-spacing: 1px; font-size: .75em; text-transform: uppercase; line-height: 1.5; }
+  p { font-size: .75em; line-height: 1.5; }
+  @include breakpoint($tablet) {
+    width: 31.25%; margin-left: 6.25%;
+  }
+}
+
+// Content modules
+.partition_header { position: relative; margin-top: -2.25em; margin-bottom: .75em; width: 100%; text-align: center; float: left;
+  h1 { @include serif; color: $darkgrey; font-size: .75em; letter-spacing: .125em; margin: 0 .75em; padding: 0 .75em; background-color: $white; display: inline-block; letter-spacing: .25em; font-weight: normal; }
+  &.wholesale { margin-top: 0; 
+    button { width: 37.5%; }
+  }
+}
+.locales .partition_header, .subnavs .partition_header { margin: 0; border-top: .0625em dashed $darkgrey; 
+  h1 { background-color: $pitchblack; -webkit-font-smoothing: antialiased; top: -.8125em; position: relative; }
+}

@@ -1,0 +1,158 @@
+$s3server : dyzmn8020x6cd; // Production amazon cloudfront
+
+@import 'bourbon/bourbon';
+@import 'utils';
+@import 'normalise';
+
+// Media Query Breakpoints
+$mobile : 30em; // 480px
+$moblet : 40em; // 640px
+$tablet : 45em; // 720px
+$tablet-mid : 55.5em; // 888px
+$tablet-landscape : 61.5em; // 984px
+$laptop : 75em; // 1200px
+$desktop : 87em; // 1392px
+$cinema : 105em; // 1680px
+
+// Important numbers
+$line: 24;
+$column: 100% / 18; // 16 plus the page gutters 
+$font-size: 16;
+$em: $font-size * 1;
+
+// Colours
+$pink : #F27490;
+$white : #fff;
+$black : rgb(25, 25, 25);
+$pitchblack : #0D0D0D;
+$blue : #00ABE4;
+$darkgrey : #808080;
+$grey : #ccc;
+$lightgrey : #E7E7E8;
+$offwhite : #f1f1f2;
+$green : #85AF5A;
+$orange : #D48B41;
+$red : #A95550;
+$yellow : #FED230;
+
+// RCC
+$rccdarkgrey : #464A4C;
+$rccbluegrey : #7A878D;
+$rcclightgrey : #D4D5CF;
+$rcchighvispink : #E7466F;
+
+// www.fonts.com/web-fonts/projects self hosted Rapha v.3 Family Grouping
+@font-face{
+font-family:"Adobe Caslon W01_i4";
+src:url("../fonts/48e53584-22ac-4328-a940-54ac91ee35db.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Adobe Caslon W01";
+src:url("../fonts/48e53584-22ac-4328-a940-54ac91ee35db.eot?#iefix");
+src:url("../fonts/48e53584-22ac-4328-a940-54ac91ee35db.eot?#iefix") format("eot"),url("../fonts/67620760-8bd8-45d7-b70d-de7936d7a6e1.woff") format("woff"),url("../fonts/d39c7172-0364-4db6-80c5-116c450e3e98.ttf") format("truetype"),url("../fonts/c1570ebd-fc91-4d70-b33b-8f19e9a0fabf.svg#c1570ebd-fc91-4d70-b33b-8f19e9a0fabf") format("svg");
+font-weight: 400;
+font-style: italic;
+}
+@font-face{
+font-family:"Adobe Caslon W01_i6";
+src:url("../fonts/bb872a9e-1155-401e-97d8-bfbce038c2b6.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Adobe Caslon W01";
+src:url("../fonts/bb872a9e-1155-401e-97d8-bfbce038c2b6.eot?#iefix");
+src:url("../fonts/bb872a9e-1155-401e-97d8-bfbce038c2b6.eot?#iefix") format("eot"),url("../fonts/04f7c3ea-f813-4a3d-b9e6-fdb1c5b29c99.woff") format("woff"),url("../fonts/4bfd503f-2ea3-4cd3-b35d-b4f3e92dd847.ttf") format("truetype"),url("../fonts/814bab73-b355-48a1-9680-68d921dbc34a.svg#814bab73-b355-48a1-9680-68d921dbc34a") format("svg");
+font-weight: 600;
+font-style: italic;
+}
+@font-face{
+font-family:"Adobe Caslon W01_n4";
+src:url("../fonts/ef429e53-4846-40b9-a3fe-4295cefc7e94.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Adobe Caslon W01";
+src:url("../fonts/ef429e53-4846-40b9-a3fe-4295cefc7e94.eot?#iefix");
+src:url("../fonts/ef429e53-4846-40b9-a3fe-4295cefc7e94.eot?#iefix") format("eot"),url("../fonts/29fc7b6f-c777-4db4-99c7-98a753629a74.woff") format("woff"),url("../fonts/492aae7f-5ec2-484f-8c4a-5dceb929def5.ttf") format("truetype"),url("../fonts/27231d8a-1ac1-4ede-8e91-c7bb60852443.svg#27231d8a-1ac1-4ede-8e91-c7bb60852443") format("svg");
+font-weight: 400;
+font-style: normal;
+}
+@font-face{
+font-family:"Freight Sans Pro W01_i3";
+src:url("../fonts/236d4dfd-2468-45b7-ae10-353747f83afa.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Freight Sans Pro W01";
+src:url("../fonts/236d4dfd-2468-45b7-ae10-353747f83afa.eot?#iefix");
+src:url("../fonts/236d4dfd-2468-45b7-ae10-353747f83afa.eot?#iefix") format("eot"),url("../fonts/72bcc0c5-6952-4534-91cc-24017617cd7c.woff") format("woff"),url("../fonts/903bc946-e210-4969-8985-d13f567a36ed.ttf") format("truetype"),url("../fonts/603febe6-e8fa-402a-8a90-99840bc5a03d.svg#603febe6-e8fa-402a-8a90-99840bc5a03d") format("svg");
+font-weight: 300;
+font-style: italic;
+}
+@font-face{
+font-family:"Freight Sans Pro W01_n7";
+src:url("../fonts/8a9b1e99-b9ef-4131-affb-58dd4bb8836e.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Freight Sans Pro W01";
+src:url("../fonts/8a9b1e99-b9ef-4131-affb-58dd4bb8836e.eot?#iefix");
+src:url("../fonts/8a9b1e99-b9ef-4131-affb-58dd4bb8836e.eot?#iefix") format("eot"),url("../fonts/1b9a845c-251c-4a39-bedf-f64e65de6719.woff") format("woff"),url("../fonts/2a68e830-949b-4969-8705-310271c184fb.ttf") format("truetype"),url("../fonts/c81ac268-5e87-4ada-8e90-b56123bc6bf5.svg#c81ac268-5e87-4ada-8e90-b56123bc6bf5") format("svg");
+font-weight: 700;
+font-style: normal;
+}
+@font-face{
+font-family:"Adobe Caslon W01_n6";
+src:url("../fonts/d2804130-67b0-4fcf-98fe-d781df92a56e.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Adobe Caslon W01";
+src:url("../fonts/d2804130-67b0-4fcf-98fe-d781df92a56e.eot?#iefix");
+src:url("../fonts/d2804130-67b0-4fcf-98fe-d781df92a56e.eot?#iefix") format("eot"),url("../fonts/6530bac7-21ac-4e52-a014-dce6a8d937ab.woff") format("woff"),url("../fonts/b34e8a45-c92d-4402-89bc-43cc51c6b4e0.ttf") format("truetype"),url("../fonts/0804bb4a-399c-4547-9fa8-0acf6268d8f6.svg#0804bb4a-399c-4547-9fa8-0acf6268d8f6") format("svg");
+font-weight: 600;
+font-style: normal;
+}
+@font-face{
+font-family:"Trade Gothic W01_n7";
+src:url("../fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Trade Gothic W01";
+src:url("../fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix");
+src:url("../fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix") format("eot"),url("../fonts/5fdc935e-9e30-442a-bbe9-8d887b858471.woff") format("woff"),url("../fonts/616c4c87-a077-43f4-a9f4-f01267c13818.ttf") format("truetype"),url("../fonts/c901ad5f-a842-4549-a1f4-583a97f7e169.svg#c901ad5f-a842-4549-a1f4-583a97f7e169") format("svg");
+font-weight: 700;
+font-style: normal;
+}
+@font-face{
+font-family:"Freight Sans Pro W01_n3";
+src:url("../fonts/7f93f850-78bb-41eb-971c-f3f44a2556c9.eot?#iefix") format("eot")
+}
+@font-face{
+font-family:"Freight Sans Pro W01";
+src:url("../fonts/7f93f850-78bb-41eb-971c-f3f44a2556c9.eot?#iefix");
+src:url("../fonts/7f93f850-78bb-41eb-971c-f3f44a2556c9.eot?#iefix") format("eot"),url("../fonts/e3a72cdd-96f7-4a6c-afd0-15448e1276a9.woff") format("woff"),url("../fonts/009ee2e0-5a09-49ca-9a1d-f0810c51d04f.ttf") format("truetype"),url("../fonts/b17b3560-ae34-4670-ae12-5604499e1c14.svg#b17b3560-ae34-4670-ae12-5604499e1c14") format("svg");
+font-weight: 300;
+font-style: normal;
+}
+@include font-face(entypo, "../fonts/entypo", normal, normal, $file-formats: eot woff ttf svg);
+@mixin sans { font-family: Verdana, Arial,sans-serif; }
+@mixin nicer-sans { font-family: "Freight Sans Pro W01", Verdana, Arial,sans-serif; }
+@mixin serif { font-family: "Adobe Caslon W01", Georgia, serif; }
+@mixin Trade-Gothic { font-family: "Trade Gothic W01", Helvetica, Arial, sans-serif; }
+@mixin Entypo { font-family: "entypo", "adobe-caslon-pro", serif; font-weight: normal; }
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin visually-hidden { border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@import 'parts/_all';

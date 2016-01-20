@@ -1,0 +1,46 @@
+section[role="main"] { background-color: $white;  padding: 1.5em .75em; box-sizing: border-box; margin-bottom: 6em; }
+
+.partition { float: left; width: 100%; @include clearfix; margin-bottom: 1.5em; padding-bottom: 1.5em; border-bottom: .0625em dotted $grey; position: relative;
+  &+.partition { margin-top: 3em; }
+  &:last-of-type { border-bottom:none; padding-bottom: 0; }
+  &.with_header { border-top: .0625em dotted $grey; padding-top: 1.5em; border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  &+.with_header { margin-top: 1.5em; }
+  &.locales, &.subnavs { border-top: none; margin-bottom:.75em; padding: 1.5em 0; }
+  &.quarter { width: 100%;
+    @include breakpoint($moblet) {
+      width: 50%;
+    }
+    @include breakpoint($tablet) {
+      width: 25%; margin-top: 0;
+    }
+  }
+  &.half { width: 100%;
+    @include breakpoint($moblet) {
+      width: 50%;
+    }
+  }
+}
+.row { @include clearfix; float: left;
+  article { min-height: 100%; }
+}
+.row > .with_header { margin-top: 1.5em; }
+
+.subhead { margin: .75em 0 1.5em;
+  h2 { color: $darkgrey; -webkit-font-smoothing: antialiased; margin: 0 0 .25em; letter-spacing: 1px;
+    &.current { color: $black; }
+  }
+  p { @include sans; font-size: .625em; line-height: 1.5; margin:0; color: $darkgrey; margin-right: 25%;
+    &.louder { color: $black; }
+    span {  color: $pink; }
+  }
+  &.subhead_dropdown.active { border-bottom-right-radius: 0; border-bottom-left-radius: 0; background-image: url(../arrow-up.svg);
+    @include old-ie { background-image: url("../arrow-up.gif"); }
+  }
+  &.subhead_dropdown { cursor: pointer; background-color: lighten($lightgrey, 6%); border-radius: .5em; padding: .75em; background-image: url(../arrow-down.svg); background-position: 94% center; background-repeat: no-repeat; background-size: 1.125em; margin-bottom: 0;
+    @include old-ie { background-image: url("../arrow-down.gif"); }    
+    a { display: block; }
+    h2 { color: $pink; }
+  }
+  &.smaller { font-size: .875em; padding: .625em .75em; background-size: 1.25em; }
+  h3 { @include nicer-sans; margin: 0; color: $darkgrey; -webkit-font-smoothing: antialiased; font-size: 1.25em; }
+}
