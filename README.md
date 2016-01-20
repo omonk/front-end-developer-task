@@ -1,6 +1,6 @@
 # Rapha Front end developer task
 
-Using the assets here, style up the content to product a layout to sell the sunglasses. 
+Using the assets here, style up the content to produce a layout to sell the sunglasses.
 
 How you style it is up to you, but bear in mind it should fit with the Rapha brand. Show off your CSS and JS skills.
 
