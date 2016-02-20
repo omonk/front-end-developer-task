@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
 
-    // 1. All configuration goes here 
+    // 1. All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass_directory_import: {
-            your_target: { 
+            your_target: {
                 files: {
                     src: ['css/sass/parts/_all.scss']
                 },
@@ -22,10 +22,19 @@ module.exports = function(grunt) {
                 }
             },
         },
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 8', 'ie 9']
+            },
+            main: {
+                src: 'css/style.css',
+                dest: 'css/style.css'
+            }
+        },
         watch: {
             sass: {
                 files: 'css/sass/**/*.scss',
-                tasks: ['sass_directory_import','sass']
+                tasks: ['sass_directory_import','sass', 'autoprefixer']
             },
             options: {
                 livereload: true
@@ -35,6 +44,7 @@ module.exports = function(grunt) {
 
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
