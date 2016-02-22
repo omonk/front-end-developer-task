@@ -7,7 +7,7 @@ function is_touch_device() {
 
 jQuery(document).ready(function($){
 
-	// Create our slider from unslider
+	// Create our slider from unslider.js
 	var slider = $('.prod-media__slide-wrap').unslider({
 		animation: 'fade',
 		nav: false,
@@ -34,11 +34,14 @@ jQuery(document).ready(function($){
 				// get all img children
 				var images = this.getElementsByTagName('img');
 
+                // Creat thirds
 				var oneThird = this.offsetWidth / 3;
 				var twoThird = oneThird * 2;
 
 				// work out where the mouse is
-				// I'd like to make this a lot more efficient if I had more time
+				// I'd like to make this a lot more efficient if I had more time,
+                // Ideally so that any number of images could be added and you
+                // wouldn't need to change anything here...
 				if (x <= oneThird) {
 					$(images).not(this).css('display', 'none');
 					$(images[0]).css('display', 'block');
@@ -53,8 +56,8 @@ jQuery(document).ready(function($){
 		}
 	}
 
+    // simple function to control info tabs
     $('.prod-page__tab a').click(function(e) {
-        console.log('fired');
         e.preventDefault();
         $(this).parent().addClass('active');
         $(this).parent().siblings().removeClass('active');
