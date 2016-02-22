@@ -1,0 +1,256 @@
+.prod-page__left,
+.prod-page__right {
+    float: left;
+    width: 100%;
+
+    @include breakpoint($tablet-mid) {
+        width: 50%;
+    };
+}
+
+.prod-page__left {
+    position: relative;
+}
+
+.prod-page__right {
+
+}
+
+.prod-media__slider {
+    height: 0;
+    text-align: center;
+    padding-bottom: 70% !important;
+
+    @include breakpoint($tablet-landscape) {
+
+    };
+}
+
+.prod-media__slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    img {
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+    }
+}
+
+
+.prod-lifestyle__slider {
+    height: 0;
+    text-align: center;
+    padding-bottom: 45% !important;
+    display: none;
+
+    @include breakpoint($tablet-landscape) {
+        display: block;
+    }
+}
+
+
+.prod-media__slide {
+    opacity: 0; // Stops image flash on load
+}
+
+.prod-page__lifestyles {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+}
+.unslider-arrow {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    transition: opacity ease .3s;
+    opacity: 0;
+
+    &:before {
+        height: 25px;
+        font-size: 40px;
+        text-align: center;
+        width: 25px;
+        display: inline-block;
+        color: white;
+        background-color: $pink;
+    }
+
+    &.prev {
+        left: 20px;
+
+        &:before {
+            content: '<'
+        }
+    }
+
+    &.next {
+        right: 20px;
+
+        &:before {
+            content: '>'
+        }
+    }
+
+    .prod-page__left:hover &,
+    .prod-page__lifestyles:hover & {
+        opacity: 1;
+    }
+}
+
+
+.prod-page__name {
+    line-height: 1.2;
+}
+
+.input-wrap {
+    display: inline-block;
+}
+
+.prod-option {
+
+    input {
+        display: none;
+    }
+
+    input:checked + label {
+        border: 1px solid black;
+    }
+
+    label {
+        position: relative;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border: 2px solid $darkgrey;
+        margin: .2em;
+        border: 8px;
+        cursor: pointer;
+        transition: opacity ease-in .15s;
+
+        &.black {
+            background-color: $black;
+        }
+
+        &.brown {
+            background-color: $brown;
+        }
+
+        &.pink {
+            background-color: $pink;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+}
+
+.prod-page__info-wrap {}
+
+
+.btn-buy {
+    font-family: $font-trade;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    padding: .3125em .75em;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 4.5px;
+    color: white;
+    background-color: $pink;
+    transition: background-color ease .3s;
+
+    &:hover {
+        background-color: lighten($pink, 5%);
+    }
+}
+
+.prod-page__lifestyle-slider {
+    position: relative;
+}
+
+.prod-page__tab {
+
+    a {
+        display: inline-block;
+        width: 33%;
+        float: left;
+        padding: 1.5em .5em;
+        text-align: center;
+        cursor: pointer;
+        font-family: $font-trade;
+        background-color: $lightgrey;
+        border-right: 1px solid $grey;
+        transition: background-color ease .4s;
+
+        &:hover {
+            background-color: lighten($lightgrey, 3%);
+        }
+    }
+}
+
+.prod-page__panel {
+    padding: 0.5em 1em;
+    display: none;
+
+    &#info {
+        display: block;
+    }
+}
+
+.prod-page__headshots-wrap {}
+
+.headshot-item {
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    z-index: 100;
+
+    @include breakpoint($tablet) {
+        width: 50%;
+        padding-bottom: 50%;
+    };
+
+    @include breakpoint($tablet-landscape) {
+        width: 25%;
+        padding-bottom: 25%;
+    };
+}
+
+.headshot-img {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+
+    &:first-of-type {
+        display: block;
+    }
+
+    @include breakpoint-max($tablet) {
+        &:first-of-type {
+            display: none;
+        }
+
+        &:nth-of-type(2) {
+            display: block;
+        }
+    }
+}

@@ -7,6 +7,18 @@ function is_touch_device() {
 
 jQuery(document).ready(function($){
 
+	// Create our slider from unslider
+	var slider = $('.prod-media__slide-wrap').unslider({
+		animation: 'fade',
+		nav: false,
+        arrows: {
+        	//  Unslider default behaviour
+        	prev: '<a class="unslider-arrow prev"></a>',
+        	next: '<a class="unslider-arrow next"></a>'
+        }
+
+	});
+
 	// Create mouseover function
 	var el = document.getElementsByClassName('headshot-item'); //get all headshot elements
 
@@ -25,6 +37,8 @@ jQuery(document).ready(function($){
 				var oneThird = this.offsetWidth / 3;
 				var twoThird = oneThird * 2;
 
+				// work out where the mouse is
+				// I'd like to make this a lot more efficient if I had more time
 				if (x <= oneThird) {
 					$(images).not(this).css('display', 'none');
 					$(images[0]).css('display', 'block');
@@ -38,4 +52,15 @@ jQuery(document).ready(function($){
 			});
 		}
 	}
+
+    $('.prod-page__tab a').click(function(e) {
+        console.log('fired');
+        e.preventDefault();
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+
+        var tab = $(this).attr("href");
+        $('.prod-page__panel').not(tab).css('display', 'none');
+        $(tab).fadeIn();
+    })
 });
