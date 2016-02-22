@@ -117,6 +117,11 @@
         &:hover {
             background-color: lighten($lightgrey, 3%);
         }
+
+    }
+    .active a {
+        background-color: darken($lightgrey, 10%);
+        color: white;
     }
 }
 
