@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
     if (!is_touch_device()) {
         for (var i = 0; i < el.length; i++) {
             // Attach our event listeners
-            el[i].on("mousemove", function(e) {
+            el[i].addEventListener("mousemove", function(e) {
 
                 // get width of our headshot element
                 var x = e.pageX - $(this).offset().left;
